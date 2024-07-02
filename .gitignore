@@ -1,0 +1,73 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+
+
+scripts_to_add.txt
+.Python
+env/
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+*.eggs
+AUTHORS
+ChangeLog
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+
+# Pycharm
+.idea
+
+# Django stuff:
+*.log
+
+# Rope
+.ropeproject
+
+
+
+# Backup files
+*~
+*.swp
+
+# Mac files
+.DS_Store
+
+# file generated when running tests
+.cprofile_*
+node_modules
+package-lock.json
+
+
+*.log
+*.pyc
+*.log.*
+*.frag
+*.backup
+*.backup.*
+*.bak
+#vscode
+.vscode

@@ -10,6 +10,9 @@
     ],
     'data': [
         'security/ir.model.access.csv',
+        'views/crm_team_views.xml',
+        'views/res_users_prospect_views.xml',
+        'views/menus.xml',
     ],
 
     'installable': True,

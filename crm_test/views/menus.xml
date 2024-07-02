@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="menu_crm_test_main" sequence="20" name="Crm Test" web_icon="crm_test,static/icons/crm_test_icon.png" />
+
+    <menuitem id="menu_sales_team" sequence="10" parent="menu_crm_test_main" name="Sales Teams" action="sales_team.sales_team_config_action" />
+
+    <menuitem id="menu_res_users_prospect" sequence="20" parent="menu_crm_test_main" name="Prospects" action="crm_test.action_res_users_prospect" />
+    
+    <menuitem id="menu_res_region" sequence="30" parent="menu_crm_test_main" name="Regions" action="crm_test.action_res_region" />
+</odoo>

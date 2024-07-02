@@ -27,7 +27,7 @@ class ResUsersProspect(models.Model):
     name = fields.Char('Name', required=True, tracking=True)
     date = fields.Date('Date', tracking=True)
     description = fields.Char('Description', tracking=True)
-    user_id = fields.Many2one('res.users', 'User', index=True, tracking=True)
+    user_id = fields.Many2one('res.users', 'User', index=True, required=True, tracking=True)
     
     state = fields.Selection([('contact', 'contact'), ('prospect', 'prospect'), ('offer', 'offer'),
                               ('sent', 'sent'), ('won', 'won'), ('lost', 'lost')],
