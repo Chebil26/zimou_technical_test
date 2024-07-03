@@ -16,9 +16,12 @@
         <field name="model">res.region</field>
         <field name="arch" type="xml">
             <form>
+
                 <sheet>
-                    <group>
+                    <h2>
                         <field name="name"/>
+                    </h2>
+                    <group>
                         <field name="commercial_lead_id"/>
                     </group>
                 </sheet>

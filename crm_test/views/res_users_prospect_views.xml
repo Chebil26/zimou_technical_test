@@ -6,7 +6,6 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="date"/>
                 <field name="description"/>
                 <field name="user_id"/>
                 <field name="state"/>
@@ -20,17 +19,34 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                        <field name="state" widget="statusbar"/>
-                    </header>
+                    <field name="state" widget="statusbar"/>
+                    <button name="btn_set_prospect" string="Set as a prospect" class="oe_highlight" type="object" 
+                            confirm="Do you want to set the contact as a prospect ?"/>
+                    <button name="btn_set_offer" string="Set as offer" class="oe_highlight" type="object" 
+                            confirm="Do you want to set the contact as a offer ?"/>
+                    <button name="btn_set_sent" string="Set as sent" class="oe_highlight" type="object" 
+                            confirm="Do you want to set the contact as a offer ?"/>
+                    <button name="btn_set_won" string="Set as sent" type="object" 
+                            confirm="Do you want to set the contact as won ."/>
+                    <button name="btn_set_lost" string="Set as lost" type="object" 
+                            confirm="Do you want to set the contact as lost ."/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <h1>
+                    <field name="name" readonly="True"/>
+                </h1>
                 <sheet>
                     <group>
                         <group>
                             <field name="user_id"/>
-                            <field name="name"/>
-                           <field name="description"/>
+                            <field name="description"/>
                         </group>
                         <group>
-                            <field name="date"/>
+                            <field name="date_created"/>
+                            <field name="date_offer"  attrs="{'invisible': [('date_offer','=', False)]}"/>
+                            <field name="date_sent" attrs="{'invisible': [('date_sent','=', False)]}"/>
+                            <field name="date_won" attrs="{'invisible': [('date_won','=', False)]}"/>
+                            <field name="date_lost" attrs="{'invisible': [('date_lost','=', False)]}"/>
                         </group>
                     </group>
                 </sheet>

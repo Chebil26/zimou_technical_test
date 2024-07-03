@@ -15,7 +15,6 @@ class ResRegion(models.Model):
 class CrmTeam(models.Model):
     _inherit = 'crm.team'
 
-    team_lead_id = fields.Many2one('res.users', 'Team leader', index=True, tracking=True)
     region_id = fields.Many2one('res.region', 'Region', tracking=True)
 
 
@@ -25,14 +24,45 @@ class ResUsersProspect(models.Model):
     _description = 'Prospect'
 
     name = fields.Char('Name', required=True, tracking=True)
-    date = fields.Date('Date', tracking=True)
+    date_created = fields.Date('Date created', tracking=True, readonly=True, default=fields.Date.today())
+    date_won = fields.Date('Date won', tracking=True, readonly=True)
+    date_lost = fields.Date('Date lost', tracking=True, readonly=True)
+    date_sent = fields.Date('Date sent', tracking=True, readonly=True)
+    date_offer = fields.Date('Date offer', tracking=True, readonly=True)
     description = fields.Char('Description', tracking=True)
     user_id = fields.Many2one('res.users', 'User', index=True, required=True, tracking=True)
     
-    state = fields.Selection([('contact', 'contact'), ('prospect', 'prospect'), ('offer', 'offer'),
-                              ('sent', 'sent'), ('won', 'won'), ('lost', 'lost')],
-                             string='State',)
+    state = fields.Selection([('contact', 'Contact'), ('prospect', 'Prospect'), ('offer', 'Offer'),
+                              ('sent', 'Sent'), ('won', 'Won'), ('lost', 'Lost')],
+                             string='State')
     
+    def btn_set_offer(self):
+        self.ensure_one()
+        self.write({
+            'state': 'offer',
+        })
+        
+    def btn_set_sent(self):
+        self.ensure_one()
+        self.write({
+            'state': 'sent',
+            'date_sent': fields.Date.today(),
+        })
+        
+    def btn_set_won(self):
+        self.ensure_one()
+        self.write({
+            'state': 'won',
+            'date_won': fields.Date.today(),
+        })
+        
+    def btn_set_lost(self):
+        self.ensure_one()
+        self.write({
+            'state': 'lost',
+            'date_lost': fields.Date.today(),
+        })
+
     def write(self, vals):
         res = super(ResUsersProspect, self).write(vals)
         # create partner
