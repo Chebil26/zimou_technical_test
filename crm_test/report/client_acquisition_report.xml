@@ -1,0 +1,23 @@
+<odoo>
+    <template id="client_acquisition_report_template">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="partner">
+                <div class="oe_structure"></div>
+                <div class="page">
+                    <h1>Client Acquisition Report</h1>
+                    <div>
+                        <h2>Client Information:</h2>
+                        <p>Name: <t t-esc="partner.name"/></p>
+                        <p>Email: <t t-esc="partner.email"/></p>
+                        <p>Phone: <t t-esc="partner.phone"/></p>
+                        <p>Address: <t t-esc="partner.street"/> <t t-esc="partner.city"/></p>
+                    </div>
+                    <div>
+                        <h2>Acquisition History:</h2>
+                        
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
