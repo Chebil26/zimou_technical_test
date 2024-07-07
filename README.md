@@ -1,31 +1,22 @@
-=======================
-CRM Technical test
-=======================
+# CRM Technical Test
 
-Apply global discounts to invoices
+Region management, prospect creation and assignment, pipeline management, and client info PDF generation
 
-**Table of contents**
+# Instalation
 
-.. contents::
-   :local:
+Copy the module crm_test folder into the Odoo add-ons directory, then update the app list and install the module from the "Apps" menu in Odoo.
 
-Usage
-=====
+# Dependencies
+
+`base`, `sales_team`
+
+# Usage
 
 To use this module, you need to:
 
-1. Go to *Invoicing > Customers > Invoices*.
-2. Create a new sales invoice, choose a customer with a defined global
-   discount and you will see how the value of the 'Invoice Global Discounts'
-   field is auto-completed with the global discounts defined in the customer
-   (See configuration section in this readme), although you can choose
-   then other global discounts defined in configuration.
-3. Add several invoice lines.
-4. At the bottom of the form you will see how global discounts affect the
-   total values.
-5. Go to the 'Journal Items' tab (if you have permissions for that).
-   There you will see how the tax lines have the discount percentage applied
-   and you will also see the lines that reflect the global discount applied.
-6. In the 'Other info' tab, you can see in the 'Global Discounts' table,
-   the global discounts applied to each of the invoice lines.
+1. Go to _Crm_test_ > _Sales Teams_
+   to access sales team menu and attribute reagion
 
+2. _Crm_test_ > _Regions_ to create regions
+3. _Crm_test_ > _Prospects_ to create and manage prospects
+4. _Contacts_ to access contancts anad print the Client Acquisition Report
