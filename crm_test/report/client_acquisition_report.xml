@@ -14,7 +14,22 @@
                     </div>
                     <div>
                         <h2>Acquisition History:</h2>
-                        
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-if="partner.prospect_id">
+                                    <td><t t-esc="partner.prospect_id.date_created"/></td>
+                                    <td><t t-esc="partner.prospect_id.state"/></td>
+                                    <td><t t-esc="partner.prospect_id.description"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </t>
