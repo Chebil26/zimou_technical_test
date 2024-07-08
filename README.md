@@ -4,6 +4,8 @@ Region management, prospect creation and assignment, pipeline management, and cl
 
 # Instalation
 
+Odoo 17
+
 Copy the module crm_test folder into the Odoo add-ons directory, then update the app list and install the module from the "Apps" menu in Odoo.
 
 # Dependencies
